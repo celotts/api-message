@@ -2481,8 +2481,13 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/mensajes/mensajes.service.ts": {
+        "version": "03814d19f42dd1e3597769a0ac839b8d6d3de43e075e8c9240b0f5ce01924c8a",
+        "signature": "498d41d484d285425894fcd3787f03224cc3c586128581ceb0094e99f290a3a5",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "d0cbefd8d49c4f7d4aad197b32ef86f9384489f7bdc7eb5fc556335d584f4017",
+        "version": "30eea1caabc9aa55c7bb9188b10f7024d35375c449cd4ef520dfb8ee36718c47",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -9059,7 +9064,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/mensajes/mensajes.controller.ts"
+        "../src/mensajes/mensajes.controller.ts",
+        "../src/mensajes/mensajes.service.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9101,6 +9107,14 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/mensajes/dto/create-mensaje-dto.ts"
+      ],
+      "../src/mensajes/mensajes.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -15594,7 +15608,8 @@
       "../src/main.ts",
       "../src/mensajes/dto/create-mensaje-dto.ts",
       "../src/mensajes/entities/mensaje.entity.ts",
-      "../src/mensajes/mensajes.controller.ts"
+      "../src/mensajes/mensajes.controller.ts",
+      "../src/mensajes/mensajes.service.ts"
     ]
   },
   "version": "3.9.7"
