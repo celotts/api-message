@@ -21,7 +21,7 @@ let MensajesService = class MensajesService {
     constructor(mensajeRepository) {
         this.mensajeRepository = mensajeRepository;
     }
-    async getall() {
+    async getAll() {
         return await this.mensajeRepository.find();
     }
     async createMensaje(mensajeNuevo) {

@@ -20,18 +20,21 @@ let MensajesController = class MensajesController {
     constructor(mensajesService) {
         this.mensajesService = mensajesService;
     }
+    static getAll() {
+        throw new Error("Method not implemented.");
+    }
     create(createMensajeDto, response) {
         this.mensajesService.createMensaje(createMensajeDto)
             .then(mensaje => {
             response.status(common_1.HttpStatus.CREATED).json(mensaje);
         }).catch(() => {
             response.status(common_1.HttpStatus.FORBIDDEN).json({
-                mensaje: 'Error en la creación del mensaje'
+                mensaje: 'Error en la creación del mensaje.'
             });
         });
     }
     getAll(response) {
-        this.mensajesService.getall()
+        this.mensajesService.getAll()
             .then(mensajeList => {
             response.status(common_1.HttpStatus.OK).json(mensajeList);
         }).catch(() => {
@@ -40,8 +43,7 @@ let MensajesController = class MensajesController {
             });
         });
     }
-    update(updateMensajeDtos, response, idMensaje) {
-        common_1.Logger.log('info 1234');
+    update(idMensaje, updateMensajeDtos, response) {
         this.mensajesService.updateMensaje(idMensaje, updateMensajeDtos)
             .then(mensaje => {
             response.status(common_1.HttpStatus.OK).json(mensaje);
@@ -78,9 +80,9 @@ __decorate([
 ], MensajesController.prototype, "getAll", null);
 __decorate([
     common_1.Put(':id'),
-    __param(0, common_1.Body()), __param(1, common_1.Res()), __param(2, common_1.Param('id')),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body()), __param(2, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_mensaje_dto_1.CreateMensajeDto, Object, Object]),
+    __metadata("design:paramtypes", [Object, create_mensaje_dto_1.CreateMensajeDto, Object]),
     __metadata("design:returntype", void 0)
 ], MensajesController.prototype, "update", null);
 __decorate([
