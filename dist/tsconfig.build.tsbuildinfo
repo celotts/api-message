@@ -2481,13 +2481,18 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/mensajes/entities/mensaje.entity.ts": {
+        "version": "54d92fff57dd50ed6ee9bb2b7c2e07e9a5ffa49130c734c65afeadfe1a6343c9",
+        "signature": "49c3df26ec830eba77447963c6f9dd0abb023e338057bd7793549f0d64a83337",
+        "affectsGlobalScope": false
+      },
       "../src/mensajes/mensajes.service.ts": {
-        "version": "03814d19f42dd1e3597769a0ac839b8d6d3de43e075e8c9240b0f5ce01924c8a",
-        "signature": "498d41d484d285425894fcd3787f03224cc3c586128581ceb0094e99f290a3a5",
+        "version": "056278f62429aecb04a37a074d4d5a1364822a2e1887dd0e8d6790e93e55228c",
+        "signature": "3269f687106d37c08f43dd44dec0030f6d785ef247cc52b8b64919c683568c54",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "30eea1caabc9aa55c7bb9188b10f7024d35375c449cd4ef520dfb8ee36718c47",
+        "version": "e968f1f80405a004683d37db4c6bcdd35f43eeb1f4d654587d804ff5aaa9bfe1",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -2674,11 +2679,6 @@
       "../src/main.ts": {
         "version": "e25d9bd8f80b6ffbcc8826ed1b407e747e4fbe346c5bab62cbe5837da4eeb189",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
-        "affectsGlobalScope": false
-      },
-      "../src/mensajes/entities/mensaje.entity.ts": {
-        "version": "54d92fff57dd50ed6ee9bb2b7c2e07e9a5ffa49130c734c65afeadfe1a6343c9",
-        "signature": "49c3df26ec830eba77447963c6f9dd0abb023e338057bd7793549f0d64a83337",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -9064,6 +9064,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
+        "../src/mensajes/entities/mensaje.entity.ts",
         "../src/mensajes/mensajes.controller.ts",
         "../src/mensajes/mensajes.service.ts"
       ],
@@ -9110,11 +9111,15 @@
       ],
       "../src/mensajes/mensajes.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mensajes/dto/create-mensaje-dto.ts",
+        "../src/mensajes/entities/mensaje.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -14971,6 +14976,11 @@
       ],
       "../src/mensajes/mensajes.controller.ts": [
         "../src/mensajes/dto/create-mensaje-dto.ts"
+      ],
+      "../src/mensajes/mensajes.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mensajes/dto/create-mensaje-dto.ts",
+        "../src/mensajes/entities/mensaje.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
