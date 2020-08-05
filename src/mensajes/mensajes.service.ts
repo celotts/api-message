@@ -12,7 +12,7 @@ export class MensajesService {
     ) { }
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async getall() {
+    async getall(): Promise<Mensaje[]> {
         try {
             return await this.mensajeRepository.find();
         } catch {
@@ -20,7 +20,7 @@ export class MensajesService {
         }
     }
 
-    async createMensaje(mensajeNuevo: CreateMensajeDto) {
+    async createMensaje(mensajeNuevo: CreateMensajeDto): Promise<Mensaje> {
         const nuevoMensaje = new Mensaje();
         nuevoMensaje.mensaje = mensajeNuevo.mensaje;
         nuevoMensaje.nick = mensajeNuevo.nick;
@@ -33,7 +33,7 @@ export class MensajesService {
     }
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async updateMensaje(idMensaje: number, mensajeUpdate: CreateMensajeDto) {
+    async updateMensaje(idMensaje: number, mensajeUpdate: CreateMensajeDto): Promise<Mensaje> {
 
         try {
             const mensajeActualizar = await this.mensajeRepository.findOne(idMensaje);
@@ -45,7 +45,7 @@ export class MensajesService {
         }
     }
 
-    async deleteMensaje(idMensaje: number) {
+    async deleteMensaje(idMensaje: number): Promise<any> {
         try {
             return await this.mensajeRepository.delete(idMensaje)
         } catch {
