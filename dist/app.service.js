@@ -12,7 +12,7 @@ let AppService = class AppService {
     getHello() {
         return {
             codigo: 1,
-            descripcion: 'Hello World!'
+            descripcion: 'Hello Carlos Lott!'
         };
     }
 };

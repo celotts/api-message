@@ -5,7 +5,7 @@ export class AppService {
   getHello(): any {
     return {
       codigo: 1,
-      descripcion: 'Hello World!'
+      descripcion: 'Hello Carlos Lott!'
     }
   }
 }
