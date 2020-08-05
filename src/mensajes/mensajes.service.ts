@@ -12,7 +12,7 @@ export class MensajesService {
     ) { }
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async getall(): Promise<Mensaje[]> {
+    async getAll(): Promise<Mensaje[]> {
         return await this.mensajeRepository.find();
 
     }

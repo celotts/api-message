@@ -5,6 +5,9 @@ import { MensajesService } from './mensajes.service';
 
 @Controller('mensajes')
 export class MensajesController {
+    static getAll(): any {
+        throw new Error("Method not implemented.");
+    }
     constructor(private mensajesService: MensajesService) { }
     @Post()
     create(@Body() createMensajeDto: CreateMensajeDto, @Res() response) {
@@ -21,7 +24,7 @@ export class MensajesController {
     @Get()
     getAll(@Res() response) {
 
-        this.mensajesService.getall()
+        this.mensajesService.getAll()
             .then(mensajeList => {
                 response.status(HttpStatus.OK).json(mensajeList)
             }).catch(() => {

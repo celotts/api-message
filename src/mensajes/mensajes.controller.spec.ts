@@ -1,18 +1,27 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { MensajesController } from './mensajes.controller';
+import { MensajesService } from './mensajes.service';
 
-describe('Mensajes Controller', () => {
-  let controller: MensajesController;
+describe('MensajesController', () => {
+  let mensajesController: MensajesController;
+  let mensajesService: MensajesService;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const moduleRef = await Test.createTestingModule({
       controllers: [MensajesController],
+      providers: [MensajesService],
     }).compile();
 
-    controller = module.get<MensajesController>(MensajesController);
+    mensajesService = moduleRef.get<MensajesService>(MensajesService);
+    mensajesController = moduleRef.get<MensajesController>(MensajesController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  describe('getAll', () => {
+    it('should return an array of getAll', async () => {
+      const result = <any>[]
+      jest.spyOn(mensajesService, 'getAll').mockImplementation(() => result);
+
+      expect(await mensajesController.getAll(result)).toBe(result);
+    });
   });
 });
