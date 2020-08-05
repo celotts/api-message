@@ -13,11 +13,8 @@ export class MensajesService {
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async getall(): Promise<Mensaje[]> {
-        try {
-            return await this.mensajeRepository.find();
-        } catch {
-            throw new Error('Ha ocurrido un error interno');
-        }
+        return await this.mensajeRepository.find();
+
     }
 
     async createMensaje(mensajeNuevo: CreateMensajeDto): Promise<Mensaje> {
@@ -25,31 +22,21 @@ export class MensajesService {
         nuevoMensaje.mensaje = mensajeNuevo.mensaje;
         nuevoMensaje.nick = mensajeNuevo.nick;
 
-        try {
-            return await this.mensajeRepository.save(nuevoMensaje);
-        } catch {
-            throw new Error('Ha ocurrido un error interno');
-        }
+        return await this.mensajeRepository.save(nuevoMensaje);
+
     }
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async updateMensaje(idMensaje: number, mensajeUpdate: CreateMensajeDto): Promise<Mensaje> {
+        const mensajeActualizar = await this.mensajeRepository.findOne(idMensaje);
+        mensajeActualizar.nick = mensajeUpdate.nick;
+        mensajeActualizar.mensaje = mensajeUpdate.mensaje;
+        return await this.mensajeRepository.save(mensajeActualizar);
 
-        try {
-            const mensajeActualizar = await this.mensajeRepository.findOne(idMensaje);
-            mensajeActualizar.nick = mensajeUpdate.nick;
-            mensajeActualizar.mensaje = mensajeUpdate.mensaje;
-            return await this.mensajeRepository.save(mensajeActualizar);
-        } catch {
-            throw new Error('Ha ocurrido un error interno');
-        }
     }
 
     async deleteMensaje(idMensaje: number): Promise<any> {
-        try {
-            return await this.mensajeRepository.delete(idMensaje)
-        } catch {
-            throw new Error('Ha ocurrido un error interno');
-        }
+        return await this.mensajeRepository.delete(idMensaje)
+
     }
 }
