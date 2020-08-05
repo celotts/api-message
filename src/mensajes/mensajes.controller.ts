@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param, Logger } from '@nestjs/common';
+import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param } from '@nestjs/common';
 import { CreateMensajeDto } from './dto/create-mensaje-dto';
 import { MensajesService } from './mensajes.service';
 
@@ -32,8 +32,7 @@ export class MensajesController {
     }
 
     @Put(':id')
-    update(@Body() updateMensajeDtos: CreateMensajeDto, @Res() response, @Param('id') idMensaje) {
-        Logger.log('info 1234')
+    update(@Param('id') idMensaje, @Body() updateMensajeDtos: CreateMensajeDto, @Res() response) {
         this.mensajesService.updateMensaje(idMensaje, updateMensajeDtos)
             .then(mensaje => {
                 response.status(HttpStatus.OK).json(mensaje)
