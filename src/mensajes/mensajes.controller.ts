@@ -16,7 +16,7 @@ export class MensajesController {
                 response.status(HttpStatus.CREATED).json(mensaje)
             }).catch(() => {
                 response.status(HttpStatus.FORBIDDEN).json({
-                    mensaje: 'Error en la creación del mensaje'
+                    mensaje: 'Error en la creación del mensaje.'
                 })
             })
     }
